@@ -13,11 +13,15 @@
         </div>
         <div class="row">
           <div class="col-md-8">
-            <button type="button" class="btn btn-info">Default</button>
-            <button type="button" class="btn btn-info btn-round">Round</button>
-            <button type="button" class="btn btn-info btn-round"><i class="fa fa-heart"></i> With Icon</button>
-            <button type="button" class="btn btn-info btn-just-icon"><i class="fa fa-heart"></i></button>
-            <button type="button" class="btn btn-info btn-link">Simple</button>
+            <n-button type="info">Default</n-button>
+            <n-button type="info" round>Default</n-button>
+            <n-button type="info" round>
+              <i class="fa fa-heart"></i> With Icon
+            </n-button>
+            <n-button type="info" round icon>
+              <i class="fa fa-heart"></i>
+            </n-button>
+            <n-button type="info" round link>Link</n-button>
           </div>
         </div>
         <div class="title">
@@ -27,9 +31,9 @@
         </div>
         <div class="row">
           <div class="col-md-8">
-            <button type="button" class="btn btn-outline-danger btn-sm">Small</button>
-            <button type="button" class="btn btn-outline-danger">Regular</button>
-            <button type="button" class="btn btn-outline-danger btn-lg">Large</button>
+            <n-button type="danger" size="sm" simple>Small</n-button>
+            <n-button type="danger" simple>Regular</n-button>
+            <n-button type="danger" size="lg" simple>Large</n-button>
           </div>
         </div>
         <div class="title">
@@ -39,25 +43,25 @@
         </div>
         <div class="row">
           <div class="col-md-8">
-            <button type="button" class="btn btn-outline-default btn-round">Default</button>
-            <button type="button" class="btn btn-outline-primary btn-round">Primary</button>
-            <button type="button" class="btn btn-outline-info btn-round">Info</button>
-            <button type="button" class="btn btn-outline-success btn-round">Success</button>
-            <button type="button" class="btn btn-outline-warning btn-round">Warning</button>
-            <button type="button" class="btn btn-outline-danger btn-round">Danger</button>
-            <button type="button" class="btn btn-outline-neutral btn-round">Neutral</button>
+            <n-button type="default" simple round>Default</n-button>
+            <n-button type="primary" simple round>Primary</n-button>
+            <n-button type="info" simple round>Info</n-button>
+            <n-button type="success" simple round>Success</n-button>
+            <n-button type="warning" simple round>Warning</n-button>
+            <n-button type="danger" simple round>Danger</n-button>
+            <n-button type="neutral" simple round>Neutral</n-button>
           </div>
         </div>
         <br/>
         <div class="row">
           <div class="col-md-8">
-            <button type="button" class="btn btn-default btn-round">Default</button>
-            <button type="button" class="btn btn-primary btn-round">Primary</button>
-            <button type="button" class="btn btn-info btn-round">Info</button>
-            <button type="button" class="btn btn-success btn-round">Success</button>
-            <button type="button" class="btn btn-warning btn-round">Warning</button>
-            <button type="button" class="btn btn-danger btn-round">Danger</button>
-            <button type="button" class="btn btn-neutral btn-round">Neutral</button>
+            <n-button type="default" round>Default</n-button>
+            <n-button type="primary" round>Primary</n-button>
+            <n-button type="info" round>Info</n-button>
+            <n-button type="success" round>Success</n-button>
+            <n-button type="warning" round>Warning</n-button>
+            <n-button type="danger" round>Danger</n-button>
+            <n-button type="neutral" round>Neutral</n-button>
           </div>
         </div>
       </div>
@@ -66,13 +70,13 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <a href="#0" class="btn btn-link btn-default">Default</a>
-          <a href="#0" class="btn btn-link btn-primary">Primary</a>
-          <a href="#0" class="btn btn-link btn-success">Success</a>
-          <a href="#0" class="btn btn-link btn-info">Info</a>
-          <a href="#0" class="btn btn-link btn-warning">Warning</a>
-          <a href="#0" class="btn btn-link btn-danger">Danger</a>
-          <a href="#0" class="btn btn-link btn-neutral">Neutral</a>
+          <n-button type="default" link>Default</n-button>
+          <n-button type="primary" link>Primary</n-button>
+          <n-button type="info" link>Info</n-button>
+          <n-button type="success" link>Success</n-button>
+          <n-button type="warning" link>Warning</n-button>
+          <n-button type="danger" link>Danger</n-button>
+          <n-button type="neutral" link>Neutral</n-button>
         </div>
       </div>
       <div class="title">
@@ -196,9 +200,16 @@
 </template>
 
 <script>
+import {
+  Button
+} from '@/components';
+
 export default {
+  components: {
+    [Button.name]: Button
+  },
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 </style>

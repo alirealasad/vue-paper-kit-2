@@ -32,7 +32,10 @@ export default {
       default: 'button'
     },
     round: Boolean,
-    simple: Boolean,
+    simple: {
+      type: Boolean,
+      default: false
+    },
     block: Boolean,
     social: Boolean,
     link: Boolean,
@@ -43,15 +46,18 @@ export default {
   computed: {
     classes() {
       let btnClasses = [
-        { 'btn-simple': this.simple },
-        { 'btn-icon': this.icon },
+        { 'btn-just-icon': this.icon },
         { 'btn-round': this.round },
         { 'btn-block': this.block },
         { 'btn-social': this.social },
         { 'btn-link': this.link },
-        { 'btn-wd': this.wide },
-        `btn-${this.type}`
+        { 'btn-wd': this.wide }
       ];
+      if (this.simple) {
+        btnClasses.push(`btn-outline-${this.type}`);
+      } else {
+        btnClasses.push(`btn-${this.type}`)
+      }
       if (this.size) {
         btnClasses.push(`btn-${this.size}`);
       }
