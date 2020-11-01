@@ -43,13 +43,46 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="title">
+        <h4>Carousel</h4>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <el-carousel height="500px" :autoplay="false">
+            <el-carousel-item>
+              <img class="d-block img-fluid" src="img/soroush-karimi.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <p>Somewhere</p>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <img class="d-block img-fluid" src="img/federico-beccari.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <p>Somewhere else</p>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <img class="d-block img-fluid" src="img/joshua-stannard.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <p>Here it is</p>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-}
-</script>
+import { Carousel, CarouselItem } from 'element-ui';
 
-<style lang="css" scoped>
-</style>
+export default {
+  components: {
+    [Carousel.name]: Carousel,
+    [CarouselItem.name]: CarouselItem
+  }
+};
+</script>
+<style></style>

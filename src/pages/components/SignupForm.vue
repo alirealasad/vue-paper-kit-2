@@ -1,5 +1,7 @@
 <template>
-  <div class="section section-image section-login" style="background-image: url('img/login-image.jpg');">
+  <div
+      class="section section-image section-login"
+      style="background-image: url('img/login-image.jpg');">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 mx-auto">
@@ -51,9 +53,12 @@
 </template>
 
 <script>
-export default {
-}
-</script>
+// import { Card} from '@/components';
 
-<style lang="css" scoped>
-</style>
+export default {
+  // components: {
+  //   Card
+  // }
+};
+</script>
+<style></style>

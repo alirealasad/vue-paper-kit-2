@@ -1,10 +1,12 @@
 <template>
-  <div class="container tim-container">
+    <div class="section">
+  <div class="container">
     <div class="title">
       <h3>Typography</h3>
     </div>
     <div id="typography">
       <div class="row">
+        <div class="col-md-12">
         <div class="typography-line">
           <h1>
             <span class="note">Header 1</span> Thinking in textures
@@ -83,6 +85,7 @@
         </div>
       </div>
     </div>
+  </div>
     <br/>
     <div id="images">
       <div class="container">
@@ -114,6 +117,7 @@
       </div>
     </div>
   </div>
+    </div>
 </template>
 
 <script>
@@ -121,5 +125,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+
+
 </style>

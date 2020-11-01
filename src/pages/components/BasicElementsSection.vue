@@ -84,30 +84,22 @@
       </div>
       <div class="row">
         <div class="col-sm-3">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Default">
-          </div>
+          <fg-input placeholder="Regular"></fg-input>
         </div>
         <div class="col-sm-3">
-          <div class="form-group has-success">
-            <input type="text" class="form-control form-control-success" id="inputSuccess1" value="Success">
-          </div>
+          <fg-input value="Success" class="has-success"></fg-input>
         </div>
         <div class="col-sm-3">
           <div class="form-group has-danger">
-            <input type="text" class="form-control form-control-danger" id="inputDanger1" value="Error">
-            <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
+            <fg-input value="Error Input" class="has-danger" error="Sorry, that username's taken. Try another?"></fg-input>
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-group"></i>
-              </span>
-            </div>
-            <input type="text" class="form-control" placeholder="Username">
-          </div>
+          <fg-input
+            addon-right-icon="fa fa-group"
+            placeholder="Username"
+          >
+          </fg-input>
         </div>
       </div>
       <br/>
@@ -116,83 +108,50 @@
           <div class="title">
             <h3>Checkboxes</h3>
           </div>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value=""> Unchecked
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="" checked> Checked
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check disabled">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="" disabled> Disabled unchecked
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check disabled">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="" disabled checked> Disabled checked
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
+          <n-checkbox v-model="checkboxes.unchecked">Unchecked</n-checkbox>
+          <n-checkbox v-model="checkboxes.checked">Checked</n-checkbox>
+          <n-checkbox v-model="checkboxes.disabledUnchecked" disabled
+            >Disabled Unchecked</n-checkbox
+          >
+          <n-checkbox v-model="checkboxes.disabledChecked" disabled
+            >Disabled Checked</n-checkbox
+          >
         </div>
         <div class="col-sm-6 col-lg-3">
           <div class="title">
             <h3>Radio Buttons</h3>
           </div>
-          <div class="form-check-radio">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"> Radio is off
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check-radio">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked> Radio is on
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check-radio disabled">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled> Disabled radio is off
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
-          <div class="form-check-radio disabled">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="exampleRadioz" id="exampleRadios4" value="option4" checked disabled> Disabled radio is on
-              <span class="form-check-sign"></span>
-            </label>
-          </div>
+          <n-radio v-model="radios.radioOn" label="1">Radio is On</n-radio>
+          <n-radio v-model="radios.radioOn" label="2">Radio is Off</n-radio>
+          <n-radio v-model="radios.radioOff" label="1" disabled
+            >Disabled radio is on</n-radio
+          >
+          <n-radio v-model="radios.radioOff" label="2" disabled
+            >Disabled radio is off</n-radio
+          >
         </div>
         <div class="col-sm-6 col-lg-3">
           <div class="title">
             <h3>Toggle Buttons</h3>
           </div>
           <div id="switches">
-            <label>
-              <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary">
-              <span class="toggle"></span>
-            </label>
-            <br/>
-            <label>
-              <input type="checkbox" data-toggle="switch" data-off-color="primary" data-on-color="primary">
-              <span class="toggle"></span>
-            </label>
+            <n-switch type="success" v-model="switches.defaultOn"></n-switch>
+            <br />
+            <n-switch
+              v-model="switches.defaultOff"
+              on-text="ON"
+              off-text="OFF"
+            ></n-switch>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3">
           <div class="title">
             <h3>Sliders</h3>
           </div>
-          <div id="sliderRegular" class="slider"></div>
+          <slider v-model="sliders.simple"> </slider>
           <br>
-          <div id="sliderDouble" class="slider slider-primary"></div>
+          <slider v-model="sliders.rangeSlider" type="primary" :connect="true">
+          </slider>
         </div>
       </div>
     </div>
@@ -201,13 +160,45 @@
 
 <script>
 import {
-  Button
+  Button,
+  FormGroupInput,
+  Checkbox,
+  Switch,
+  Slider,
+  Radio
 } from '@/components';
 
 export default {
   components: {
-    [Button.name]: Button
+    [FormGroupInput.name]: FormGroupInput,
+    [Checkbox.name]: Checkbox,
+    [Button.name]: Button,
+    [Switch.name]: Switch,
+    [Radio.name]: Radio,
+    Slider
   },
+  data() {
+    return {
+      radios: {
+        radioOn: '2',
+        radioOff: '2'
+      },
+      checkboxes: {
+        unchecked: false,
+        checked: true,
+        disabledUnchecked: false,
+        disabledChecked: true
+      },
+      switches: {
+        defaultOn: true,
+        defaultOff: false
+      },
+      sliders: {
+        simple: 30,
+        rangeSlider: [20, 60]
+      }
+    };
+  }
 }
 </script>
 
