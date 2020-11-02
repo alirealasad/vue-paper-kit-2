@@ -11,6 +11,7 @@ import Checkbox from './Inputs/Checkbox.vue';
 import Radio from './Inputs/Radio.vue';
 import Switch from './Switch.vue';
 import Slider from './Slider.vue';
+import Modal from './Modal.vue';
 
 
 export {
@@ -25,6 +26,7 @@ export {
   Checkbox,
   Radio,
   Tabs,
+  Modal,
   Slider,
   Switch
 }
