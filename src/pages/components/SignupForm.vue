@@ -18,29 +18,25 @@
                 <i class="fa fa-twitter"></i>
               </a>
             </div>
-            <form class="register-form">
-              <label>Email</label>
-              <div class="input-group form-group-no-border">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="nc-icon nc-email-85"></i>
-                  </span>
-                </div>
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-              <label>Password</label>
-              <div class="input-group form-group-no-border">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="nc-icon nc-key-25"></i>
-                  </span>
-                </div>
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <button class="btn btn-danger btn-block btn-round">Register</button>
-            </form>
+            <div class="register-form">
+                <fg-input
+                 label="Email"
+                 class="form-group-no-border"
+                  placeholder="Email"
+                  addon-left-icon="nc-icon nc-email-85"
+                >
+                </fg-input>
+                <fg-input
+                  label="Password"
+                  class="form-group-no-border"
+                  placeholder="password"
+                  addon-left-icon="nc-icon nc-key-25"
+                >
+                </fg-input>
+                <n-button type="danger" block round>Register</n-button>
+            </div>
             <div class="forgot">
-              <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+              <n-button type="danger" link>Forgot password?</n-button>
             </div>
           </div>
           <div class="col text-center">
@@ -53,12 +49,17 @@
 </template>
 
 <script>
-// import { Card} from '@/components';
+import {
+  // Card,
+   FormGroupInput,
+    Button } from '@/components';
 
 export default {
-  // components: {
-  //   Card
-  // }
+  components: {
+    // Card,
+    [Button.name]: Button,
+    [FormGroupInput.name]: FormGroupInput
+  }
 };
 </script>
 <style></style>
