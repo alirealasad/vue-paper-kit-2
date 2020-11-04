@@ -82,13 +82,10 @@
           <h2 class="title">Let's talk about us</h2>
           <div class="row">
             <div class="col-md-4">
-              <div class="card card-profile card-plain">
-                <div class="card-avatar">
-                  <a href="#avatar">
+              <card type="profile" plain noFooterLine>
+                  <a slot="avatar" href="#avatar">
                     <img src="img/faces/clem-onojeghuo-3.jpg" alt="...">
                   </a>
-                </div>
-                <div class="card-body">
                   <a href="#paper-kit">
                     <div class="author">
                       <h4 class="card-title">Henry Ford</h4>
@@ -98,22 +95,18 @@
                   <p class="card-description text-center">
                     Teamwork is so important that it is virtually impossible for you to reach the heights of your capabilities or make the money that you want without becoming very good at it.
                   </p>
+                <div slot="footer">
+                  <n-button type="neutral" link icon><i class="fa fa-twitter"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-google-plus"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-linkedin"></i></n-button>
                 </div>
-                <div class="card-footer text-center">
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
+              </card>
             </div>
             <div class="col-md-4">
-              <div class="card card-profile card-plain">
-                <div class="card-avatar">
-                  <a href="#avatar">
+              <card type="profile" plain noFooterLine>
+                  <a slot="avatar" href="#avatar">
                     <img src="img/faces/joe-gardner-2.jpg" alt="...">
                   </a>
-                </div>
-                <div class="card-body">
                   <a href="#paper-kit">
                     <div class="author">
                       <h4 class="card-title">Sophie West</h4>
@@ -123,22 +116,18 @@
                   <p class="card-description text-center">
                     A group becomes a team when each member is sure enough of himself and his contribution to praise the skill of the others. No one can whistle a symphony. It takes an orchestra to play it.
                   </p>
+                <div slot="footer">
+                  <n-button type="neutral" link icon><i class="fa fa-twitter"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-google-plus"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-linkedin"></i></n-button>
                 </div>
-                <div class="card-footer text-center">
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
+              </card>
             </div>
             <div class="col-md-4">
-              <div class="card card-profile card-plain">
-                <div class="card-avatar">
-                  <a href="#avatar">
+              <card type="profile" plain noFooterLine>
+                  <a slot="avatar" href="#avatar">
                     <img src="img/faces/erik-lucatero-2.jpg" alt="...">
                   </a>
-                </div>
-                <div class="card-body">
                   <a href="#paper-kit">
                     <div class="author">
                       <h4 class="card-title">Robert Orben</h4>
@@ -148,13 +137,12 @@
                   <p class="card-description text-center">
                     The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.
                   </p>
+                <div slot="footer">
+                  <n-button type="neutral" link icon><i class="fa fa-twitter"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-google-plus"></i></n-button>
+                  <n-button type="neutral" link icon><i class="fa fa-linkedin"></i></n-button>
                 </div>
-                <div class="card-footer text-center">
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>
-                  <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
-                </div>
-              </div>
+              </card>
             </div>
           </div>
         </div>
@@ -164,36 +152,31 @@
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
               <h2 class="text-center">Keep in touch?</h2>
-              <form class="contact-form">
-                <div class="row">
+              <form class="contact-form">                <div class="row">
                   <div class="col-md-6">
                     <label>Name</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="nc-icon nc-single-02"></i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Name">
-                    </div>
+                    <fg-input
+                      placeholder="Name"
+                      v-model="form.firstName"
+                      addon-left-icon="nc-icon nc-single-02"
+                    >
+                    </fg-input>
                   </div>
                   <div class="col-md-6">
                     <label>Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="nc-icon nc-email-85"></i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Email">
-                    </div>
+                    <fg-input
+                      placeholder="Email"
+                      v-model="form.email"
+                      addon-left-icon="nc-icon nc-email-85"
+                    >
+                    </fg-input>
                   </div>
                 </div>
                 <label>Message</label>
-                <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                <textarea class="form-control" rows="4" v-model="form.message" placeholder="Tell us your thoughts and feelings..."></textarea>
                 <div class="row">
                   <div class="col-md-4 ml-auto mr-auto">
-                    <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                    <n-button type="danger" size="lg" fill>Send Message</n-button>
                   </div>
                 </div>
               </form>
@@ -206,9 +189,24 @@
 </template>
 
 <script>
+import { Card,Button, FormGroupInput } from '@/components';
 export default {
-}
+  name: 'landing',
+  bodyClass: 'landing-page',
+  components: {
+    Card,
+    [Button.name]: Button,
+    [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+    return {
+      form: {
+        firstName: '',
+        email: '',
+        message: ''
+      }
+    };
+  }
+};
 </script>
-
-<style lang="css" scoped>
-</style>
+<style></style>
