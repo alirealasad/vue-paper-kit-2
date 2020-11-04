@@ -154,8 +154,8 @@
               <h2 class="text-center">Keep in touch?</h2>
               <form class="contact-form">                <div class="row">
                   <div class="col-md-6">
-                    <label>Name</label>
                     <fg-input
+                      label="Name"
                       placeholder="Name"
                       v-model="form.firstName"
                       addon-left-icon="nc-icon nc-single-02"
@@ -163,8 +163,8 @@
                     </fg-input>
                   </div>
                   <div class="col-md-6">
-                    <label>Email</label>
                     <fg-input
+                      label="Email"
                       placeholder="Email"
                       v-model="form.email"
                       addon-left-icon="nc-icon nc-email-85"
@@ -189,7 +189,7 @@
 </template>
 
 <script>
-import { Card,Button, FormGroupInput } from '@/components';
+import { Card, Button, FormGroupInput } from '@/components';
 export default {
   name: 'landing',
   bodyClass: 'landing-page',

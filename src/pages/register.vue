@@ -4,42 +4,75 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 ml-auto mr-auto">
-          <div class="card card-register">
-            <h3 class="title mx-auto">Welcome</h3>
-            <div class="social-line text-center">
-              <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-              <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
-                <i class="fa fa-google-plus"></i>
-              </a>
-              <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
-                <i class="fa fa-twitter"></i>
-              </a>
+          <card type="register">
+            <div slot="raw-content">
+              <h3 class="title mx-auto text-center">Welcome</h3>
+              <div class="social-line text-center">
+                <n-button type="neutral" class="mt-0 btn-facebook" icon><i class="fa fa-facebook"></i></n-button>
+                <n-button type="neutral" class="mt-0 btn-google" icon><i class="fa fa-google-plus"></i></n-button>
+                <n-button type="neutral" class="mt-0 btn-twitter" icon><i class="fa fa-twitter"></i></n-button>
+              </div>
+              <div class="register-form">
+                  <fg-input
+                   label="Email"
+                   class="form-group-no-border"
+                    placeholder="Email"
+                    addon-left-icon="nc-icon nc-email-85"
+                  >
+                  </fg-input>
+                  <fg-input
+                    label="Password"
+                    class="form-group-no-border"
+                    placeholder="password"
+                    addon-left-icon="nc-icon nc-key-25"
+                  >
+                  </fg-input>
+                  <n-button type="danger" block round>Register</n-button>
+              </div>
+              <div class="forgot">
+                <n-button type="danger" link>Forgot password?</n-button>
+              </div>
             </div>
-            <form class="register-form">
-              <label>Email</label>
-              <input type="text" class="form-control" placeholder="Email">
-              <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password">
-              <button class="btn btn-danger btn-block btn-round">Register</button>
-            </form>
-            <div class="forgot">
-              <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-            </div>
-          </div>
+          </card>
         </div>
       </div>
     </div>
     <div class="footer register-footer text-center">
-      <h6>©</h6>
+      <span class="copyright">
+        &copy; {{ year }}, made with <i class="fa fa-heart heart"></i>
+         by
+         <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
+           >Creative Tim</a
+         >.
+         and Coded by
+         <a href="https://github.com/alirealasad" target="_blank" rel="noopener"
+           >Asad Ali</a
+         >.
+
+      </span>
     </div>
   </div>
 </template>
 
 <script>
+import {
+   Card,
+   FormGroupInput,
+   Button
+  } from '@/components';
+
 export default {
-}
+  components: {
+    Card,
+    [Button.name]: Button,
+    [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+    return {
+      year: new Date().getFullYear()
+    };
+  }
+};
 </script>
 
 <style lang="css" scoped>
