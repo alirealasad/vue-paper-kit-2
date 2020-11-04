@@ -24,21 +24,14 @@
         </div>
       </div>
       <br/>
-      <div class="nav-tabs-navigation">
-        <div class="nav-tabs-wrapper">
-          <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Tab panes -->
-      <div class="tab-content following">
-        <div class="tab-pane active" id="follows" role="tabpanel">
+      <tabs
+        slot="raw-content"
+        tab-content-classes="tab-content-padding text-center"
+      >
+        <tab-pane>
+          <template slot="label">
+            Follows
+          </template>
           <div class="row">
             <div class="col-md-6 ml-auto mr-auto">
               <ul class="list-unstyled follows">
@@ -88,19 +81,31 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="tab-pane text-center" id="following" role="tabpanel">
+        </tab-pane>
+        <tab-pane>
+          <template slot="label">
+            Following
+          </template>
           <h3 class="text-muted">Not following anyone yet :(</h3>
           <button class="btn btn-warning btn-round">Find artists</button>
-        </div>
-      </div>
+        </tab-pane>
+      </tabs>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import {
+  Tabs,
+  TabPane
+} from '@/components';
+
 export default {
+  components: {
+    Tabs,
+    TabPane
+  },
 }
 </script>
 
