@@ -103,6 +103,15 @@ export default {
       tabs: []
     };
   },
+  computed: {
+    tabTypeClass() {
+      let baseClass = this.pills ? 'pills' : 'tabs';
+      if (this.type) {
+        return `nav-${baseClass}-${this.type}`;
+      }
+      return '';
+    }
+  },
   methods: {
     findAndActivateTab(label) {
       let tabToActivate = this.tabs.find(t => t.label === label);

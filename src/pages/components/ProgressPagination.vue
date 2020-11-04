@@ -7,11 +7,11 @@
             <h3>Progress Bar</h3>
             <br>
           </div>
-          <n-progress value="25" type="success"></n-progress>
+          <n-progress :value="25" type="success"></n-progress>
           <br>
-          <n-progress value="50" type="info"></n-progress>
+          <n-progress :value="50" type="info"></n-progress>
           <br>
-          <n-progress value="100" type="danger"></n-progress>
+          <n-progress :value="100" type="danger"></n-progress>
           <br>
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
@@ -113,12 +113,12 @@
           <div class="title">
             <h3>Labels</h3>
           </div>
-          <Label>default</Label>
-          <Label type="primary">Primary</Label>
-          <Label type="info">Info</Label>
-          <Label type="success">Success</Label>
-          <Label type="warning">Warning</Label>
-          <Label type="danger">Danger</Label>
+          <Badge>default</Badge>
+          <Badge type="primary">Primary</Badge>
+          <Badge type="info">Info</Badge>
+          <Badge type="success">Success</Badge>
+          <Badge type="warning">Warning</Badge>
+          <Badge type="danger">Danger</Badge>
         </div>
       </div>
       <div class="col-md-6">
@@ -132,7 +132,7 @@
 import {
   Progress,
   Pagination,
-  Label,
+  Badge,
   Tabs,
   TabPane
 } from '@/components';
@@ -140,7 +140,7 @@ export default {
   components: {
     [Progress.name]: Progress,
     [Pagination.name]: Pagination,
-    Label,
+    Badge,
     Tabs,
     TabPane
   },

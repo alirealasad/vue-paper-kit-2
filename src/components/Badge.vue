@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'label',
+  name: 'badge',
   props: {
     tag: {
       type: String,

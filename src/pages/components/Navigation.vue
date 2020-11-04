@@ -23,19 +23,17 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#pk">Link</a>
                   </li>
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" href="#pk" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu dropdown-info" aria-labelledby="dropdownMenuButton">
-                      <li class="dropdown-header">Dropdown header</li>
-                      <a class="dropdown-item" href="#pk">Action</a>
-                      <a class="dropdown-item" href="#pk">Another action</a>
-                      <a class="dropdown-item" href="#pk">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#pk">Separated link</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#pk">Another separated link</a>
-                    </ul>
-                  </div>
+                  <drop-down class="nav-item" type="info" title="Dropdown">
+                    <li class="dropdown-header">Dropdown header</li>
+                    <a class="dropdown-item" href="#pk">Action</a>
+                    <a class="dropdown-item" href="#pk">Another action</a>
+                    <a class="dropdown-item" href="#pk">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <li class="dropdown-header">Another header</li>
+                    <a class="dropdown-item" href="#pk">Separated link</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#pk">Another separated link</a>
+                  </drop-down>
                 </ul>
               </div>
             </nav>
@@ -56,16 +54,13 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#pk"><i class="nc-icon nc-single-02" aria-hidden="true"></i></a>
                   </li>
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#pk" role="button" aria-haspopup="true" aria-expanded="false"><i class="nc-icon nc-settings-gear-65" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-right dropdown-danger">
-                      <li class="dropdown-header" href="#pk">Dropdown header</li>
-                      <a class="dropdown-item" href="#pk">Another action</a>
-                      <a class="dropdown-item" href="#pk">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#pk">Separated link</a>
-                    </ul>
-                  </div>
+                  <drop-down class="nav-item" type="info" title="Dropdown">
+                    <li class="dropdown-header" href="#pk">Dropdown header</li>
+                    <a class="dropdown-item" href="#pk">Another action</a>
+                    <a class="dropdown-item" href="#pk">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#pk">Separated link</a>
+                  </drop-down>
                 </ul>
               </div>
             </nav>
@@ -230,7 +225,12 @@
 </template>
 
 <script>
+import { DropDown } from '@/components';
+
 export default {
+  components: {
+    DropDown
+  }
 }
 </script>
 

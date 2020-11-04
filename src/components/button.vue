@@ -42,7 +42,7 @@ export default {
     icon: Boolean,
     wide: Boolean,
     size: String,
-    fill:String
+    fill: Boolean
   },
   computed: {
     classes() {
@@ -53,7 +53,7 @@ export default {
         { 'btn-social': this.social },
         { 'btn-link': this.link },
         { 'btn-wd': this.wide },
-        {'btn-full':this.fill}
+        {'btn-fill':this.fill}
       ];
       if (this.simple) {
         btnClasses.push(`btn-outline-${this.type}`);
