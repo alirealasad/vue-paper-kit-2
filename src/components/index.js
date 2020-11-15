@@ -8,6 +8,9 @@ import Tabs from './Tabs/Tabs.vue';
 import Card from './Cards/Card.vue';
 import FormGroupInput from './Inputs/formGroupInput.vue';
 import Checkbox from './Inputs/Checkbox.vue';
+import Navbar from './Navbar/Navbar';
+import NavLink from './Navbar/NavLink';
+import NavbarToggleButton from './Navbar/NavbarToggleButton';
 import Radio from './Inputs/Radio.vue';
 import Switch from './Switch.vue';
 import Slider from './Slider.vue';
@@ -24,6 +27,9 @@ export {
   TabPane,
   Card,
   DropDown,
+  Navbar,
+  NavbarToggleButton,
+  NavLink,
   FormGroupInput,
   Checkbox,
   Radio,
