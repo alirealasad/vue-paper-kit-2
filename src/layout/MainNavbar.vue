@@ -1,25 +1,16 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/paper-kit/index.html" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
-          Paper Kit 2
-        </a>
-        <button
-          class="navbar-toggler navbar-toggler"
-          type="button" data-toggle="collapse"
-          data-target="#navigation"
-          aria-controls="navigation-index"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          >
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <ul class="navbar-nav">
+  <navbar
+    position="fixed"
+    :transparent="transparent"
+    :color-on-scroll="colorOnScroll"
+    menu-classes="ml-auto"
+  >
+  <template>
+    <router-link class="navbar-brand" to="/">
+      Paper Kit 2
+    </router-link>
+  </template>
+  <template slot="navbar-menu">
           <li class="nav-item">
             <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
               <i class="fa fa-twitter"></i>
@@ -50,16 +41,30 @@
           <li class="nav-item">
             <a href="https://www.creative-tim.com/product/paper-kit-2-pro?ref=pk2-free-local" target="_blank" class="btn btn-danger btn-round">Upgrade to Pro</a>
           </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </template>
+  </navbar>
 </template>
 
 <script>
+import {
+  // DropDown,
+  Navbar,
+  // NavLink
+ } from '@/components';
+// import { Popover } from 'element-ui';
 export default {
-}
+  name: 'main-navbar',
+  props: {
+    transparent: Boolean,
+    colorOnScroll: Number
+  },
+  components: {
+    // DropDown,
+    Navbar,
+    // NavLink,
+    // [Popover.name]: Popover
+  }
+};
 </script>
 
-<style lang="css" scoped>
-</style>
+<style scoped></style>

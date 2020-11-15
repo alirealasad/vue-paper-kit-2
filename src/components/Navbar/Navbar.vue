@@ -3,15 +3,10 @@
     <div class="container">
       <div class="navbar-translate">
         <slot v-bind="slotData"></slot>
-        <div>
-          <slot name="toggle-button"></slot>
-        </div>
-        <!-- <template slot="toggle-button">
           <navbar-toggle-button
             :toggled="showMenu"
             @click.native.stop="toggle"
           ></navbar-toggle-button>
-        </template> -->
       </div>
       <div
         class="navbar-collapse collapse justify-content-end"
@@ -37,7 +32,7 @@
 </template>
 
 <script>
-// import NavbarToggleButton from './NavbarToggleButton';
+import NavbarToggleButton from './NavbarToggleButton';
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
   // ignore resize events as long as an actualResizeHandler execution is in the queue
@@ -71,10 +66,9 @@ export default {
     },
     type: {
       type: String,
-      default: 'white',
+      default: undefined,
       validator(value) {
         return [
-          'white',
           'default',
           'primary',
           'danger',
@@ -102,7 +96,7 @@ export default {
     };
   },
   components: {
-    // NavbarToggleButton
+    NavbarToggleButton
   },
   data() {
     return {
@@ -132,7 +126,7 @@ export default {
 
       return [
         { 'navbar-transparent': this.transparent || colorOnScrollTransparent },
-        { [color]: !this.transparent && this.colorOnScroll === 0 },
+        { [color]: !this.transparent && this.colorOnScroll === 0 && this.type},
         this.expand ? `navbar-expand-${this.expand}` : '',
         navPosition,
         this.extraNavClasses
@@ -167,7 +161,7 @@ export default {
       let scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
       this.currentScrollValue = scrollValue;
-      if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
+      if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll && this.type) {
         this.extraNavClasses = `bg-${this.type}`;
       } else {
         if (this.extraNavClasses) {

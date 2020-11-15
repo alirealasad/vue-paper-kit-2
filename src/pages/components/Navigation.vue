@@ -8,7 +8,7 @@
         <br/>
         <div class="row">
           <div class="col-md-6">
-            <navbar type="primary">
+            <!-- <navbar type="primary">
               <a class="navbar-brand" href="#">Menu</a>
 
               <template slot="navbar-menu">
@@ -33,7 +33,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#pk">Another separated link</a>
                 </drop-down>
-              <!-- <template slot="toggle-button">
+              <template slot="toggle-button">
                 <button
                    class="navbar-toggler navbar-toggler-right"
                    type="button"
@@ -48,11 +48,11 @@
                   <span class="navbar-toggler-bar"></span>
                   <span class="navbar-toggler-bar"></span>
                 </button>
-                </template> -->
+                </template>
               </template>
-            </navbar>
+            </navbar> -->
 
-            <!-- <nav class="navbar navbar-expand-lg bg-primary">
+            <nav class="navbar navbar-expand-lg bg-primary">
               <a class="navbar-brand" href="#">Menu</a>
               <button
                  class="navbar-toggler navbar-toggler-right"
@@ -93,7 +93,7 @@
                   </drop-down>
                 </ul>
               </div>
-            </nav> -->
+            </nav>
           </div>
           <div class="col-md-6">
             <nav class="navbar navbar-expand-lg bg-danger">
@@ -282,12 +282,11 @@
 </template>
 
 <script>
-import { Navbar, DropDown } from '@/components';
+import { DropDown } from '@/components';
 
 
 export default {
   components: {
-    Navbar,
     DropDown
   }
 }
