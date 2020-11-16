@@ -22,7 +22,8 @@ jobs:
         node-version: '10.x'
     - run: npm install
     - run: npm run build
-- name: Deploy 🚀
+      
+    - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
