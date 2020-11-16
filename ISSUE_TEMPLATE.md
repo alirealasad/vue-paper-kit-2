@@ -1,7 +1,8 @@
 <!--
  IMPORTANT: Please use the following link to create a new issue:
 
-  https://www.creative-tim.com/new-issue/vue-now-ui-kit
+  https://www.creative-tim.com/new-issue/paper-kit-2
+  
 
 **If your issue was not created using the app above, it will be closed immediately.**
 -->
