@@ -38,5 +38,3 @@ export {
   Slider,
   Switch
 }
-
-//btn btn-neutral btn-round
